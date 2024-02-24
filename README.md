@@ -1,4 +1,4 @@
-# **Boston Meshtastic Project Overview**
+# **Boston Meshtastic**
 
 Welcome to the Boston Meshtastic Project, an initiative leveraging the Meshtastic mesh network to boost community connectivity and support local initiatives with technology. We focus on utilizing low-cost, long-range Meshtastic devices throughout Boston to enable seamless communication and encourage a culture of innovation and collaboration.
 
