@@ -4,7 +4,7 @@ This document outlines the design for a high resolution dashboard targeted at am
 
 ## Core Technologies
 
-- **Visualization Engine**: [CesiumJS](https://cesium.com/platform/cesiumjs/) for a 3‑D globe capable of rendering at 4K.
+- **Visualization Engine**: [CesiumJS](https://cesium.com/platform/cesiumjs/) rendering a 2‑D map or 3‑D globe optimized for 4K displays.
 - **Web Framework**: Node.js with Express serves the static dashboard and provides API endpoints. WebSockets (via `socket.io`) deliver real-time updates.
 - **Mapping Framework**: Cesium imagery layers combined with optional Leaflet 2‑D overlays for simpler map views.
 - **Data Aggregation**: Background worker scripts collect external data feeds such as propagation or satellite positions and cache them for rapid display.
@@ -34,8 +34,9 @@ This document outlines the design for a high resolution dashboard targeted at am
 - COVID‑19 statistics on a country level (updated daily).
 - ISS and additional satellite locations for over 400 tracked objects.
 
-## Display Customization
+-## Display Customization
 
+- **Basemap Options**: Satellite imagery, hillshade relief, or colorized country overlays (random, by population, or by population density).
 - **Mapsets**: Greyscale, topographic, ham‑radio focused and other thematic styles. Five mapsets come pre‑loaded with lifetime updates.
 - **Location Pins**: Up to 16 customizable pins with local time display.
 - **Dynamic & Static Layers**: Earth at night overlay, shipping routes, undersea cables, and more.
