@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Worldview Dashboard</title>
+  <style>
+    html, body, #cesiumContainer { width: 100%; height: 100%; margin: 0; padding: 0; }
+    #overlay { position: absolute; top: 10px; left: 10px; color: white; font-family: sans-serif; }
+    #controls { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 6px; font-family: sans-serif; border-radius: 4px; }
+    .cesium-widget-credits, .cesium-viewer-bottom { display: none !important; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/cesium@latest/Build/Cesium/Cesium.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/cesium@latest/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <div id="controls">
+    <select id="basemapSelect">
+      <option value="osm">Continents</option>
+      <option value="satellite">Satellite</option>
+      <option value="hillshade">Hillshade</option>
+      <option value="countries-random">Countries Random</option>
+      <option value="countries-population">Countries by Population</option>
+      <option value="countries-density">Countries by Density</option>
+    </select>
+  </div>
+  <div id="overlay">Loading...</div>
+  <script src="js/main.js"></script>
+</body>
+</html>
