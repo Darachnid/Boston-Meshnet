@@ -1,0 +1,37 @@
+const path = require('path');
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+const cesiumPath = path.join(__dirname, 'node_modules', 'cesium', 'Build', 'Cesium');
+
+// Serve Cesium library
+app.use('/cesium', express.static(cesiumPath));
+
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Index route (useful if the server is started from another directory)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Example endpoint for health check
+app.get('/status', (req, res) => {
+  res.json({status: 'ok'});
+});
+
+// WebSocket connection
+io.on('connection', (socket) => {
+  console.log('client connected');
+  socket.on('disconnect', () => console.log('client disconnected'));
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
