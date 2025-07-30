@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
@@ -7,7 +8,12 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Index route (useful if the server is started from another directory)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Example endpoint for health check
 app.get('/status', (req, res) => {

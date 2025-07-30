@@ -57,13 +57,13 @@ Worldview_Dashboard/
 ## Setup Outline
 
 1. Install Node.js (`>=16`).
-2. Install dependencies:
+2. Install dependencies from `package.json`:
    ```bash
-   npm install express socket.io
+   npm install
    ```
-3. Run the server:
+3. Start the server:
    ```bash
-   node server.js
+   npm start
    ```
 4. Open `http://localhost:3000` in a Chromium-based browser set to kiosk mode for best 4K display results.
 
