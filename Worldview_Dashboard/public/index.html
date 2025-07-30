@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Worldview Dashboard</title>
+  <style>
+    html, body, #cesiumContainer { width: 100%; height: 100%; margin: 0; padding: 0; }
+    #overlay { position: absolute; top: 10px; left: 10px; color: white; font-family: sans-serif; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/cesium@latest/Build/Cesium/Cesium.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/cesium@latest/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <div id="overlay">Loading...</div>
+  <script src="js/main.js"></script>
+</body>
+</html>
